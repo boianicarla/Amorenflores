@@ -37,7 +37,7 @@ export const Navbar = () => {
           <a href="#" className="flex items-center gap-4 group" aria-label="Ir al inicio">
             <img 
               src={logo} 
-              alt="" 
+              alt="Logo Amor en Flores Bárbara" 
               className="w-10 h-10 lg:w-14 lg:h-14 rounded-full transition-all duration-700 shadow-sm border border-brand-blue-sky/20"
               referrerPolicy="no-referrer"
             />

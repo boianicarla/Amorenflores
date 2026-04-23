@@ -15,9 +15,10 @@ export const Hero = () => {
         >
           <img 
             src={heroImage} 
-            alt="Detalle de flores artesanales" 
+            alt="Composición artística de ramos de flores artesanales tejidas a mano por Amor en Flores Bárbara" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            loading="eager"
           />
         </motion.div>
         

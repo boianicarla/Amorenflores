@@ -161,9 +161,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
         <div className="relative aspect-[3/4] overflow-hidden mb-6 bg-brand-blue-sky/5 rounded-2xl transition-all duration-700 shadow-sm group-hover:shadow-xl">
           <img
             src={resolvedImage}
-            alt={product.name}
+            alt={`Flor artesanal: ${product.name} - Diseño hecho a mano por Amor en Flores Bárbara`}
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
             referrerPolicy="no-referrer"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-brand-blue-deep/0 group-hover:bg-brand-blue-deep/10 transition-colors duration-500" />
           

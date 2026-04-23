@@ -38,9 +38,10 @@ export const AboutSection = () => {
         <div className="flex-1 relative h-[400px] md:h-auto overflow-hidden">
           <img
             src={aboutImage}
-            alt="Diseñando un ramo artesanal"
+            alt="Bárbara trabajando en un diseño de flores artesanales tejidas a mano"
             className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-brand-blue-deep/10" />
         </div>
@@ -58,7 +59,7 @@ export const Footer = () => {
             <a href="#" className="flex items-center gap-4 group">
               <img 
                 src={logo} 
-                alt="" 
+                alt="Logotipo de Amor en Flores Bárbara" 
                 className="w-10 h-10 rounded-full transition-all duration-700 shadow-sm"
                 referrerPolicy="no-referrer"
               />

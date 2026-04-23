@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import heroImage from '@/assets/ramo1.webp';
+import heroImage from '../assets/ramo1.webp';
 
 export const Hero = () => {
   return (

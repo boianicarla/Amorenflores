@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
-import logo from '@/assets/logo.png';
+import logo from '../assets/logo.png';
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

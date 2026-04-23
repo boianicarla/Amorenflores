@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import heroImage from '../assets/ramo1.webp';
 
 export const Hero = () => {
   return (
@@ -13,7 +14,7 @@ export const Hero = () => {
           className="absolute inset-0"
         >
           <img 
-            src="/ramo1.webp" 
+            src={heroImage} 
             alt="Composición artística de ramos de flores artesanales tejidas a mano por Amor en Flores Bárbara" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"

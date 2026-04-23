@@ -81,7 +81,7 @@ const products: Product[] = [
   {
     id: 12,
     name: "Lengua de Suegra Mini",
-    image: "/planta-lengua-suegra-mini-flores-eternas-limpiapipas-artesanal.webp",
+    image: "/planta-lengua-suegra-mini--flores-eternas-limpiapipas-artesanal.webp",
     category: "Plantas"
   },
   {
@@ -123,7 +123,7 @@ const products: Product[] = [
   {
     id: 19,
     name: "Maceta de Tulipanes",
-    image: "/tulipanes-maceta-flores-eternas-limpia-pipas-manualidades-pipe-cleaner-flowers.webp.webp",
+    image: "/tulipanes-maceta-flores-eternas-limpiapipas.webp",
     category: "Hogar"
   },
   {
@@ -135,7 +135,7 @@ const products: Product[] = [
   {
     id: 21,
     name: "Mini Tulipanes Duo",
-    image: "/tulipanes-miniflores-eternas-limpia-pipas-manualidades-pipe-cleaner-flowers.webp.webp",
+    image: "/tulipanes-miniflores-eternas-limpiapipas.webp",
     category: "Colección"
   }
 ];
@@ -159,7 +159,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
             src={product.image}
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-brand-blue-deep/0 group-hover:bg-brand-blue-deep/10 transition-colors duration-500" />
           

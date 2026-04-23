@@ -38,7 +38,6 @@ export const AboutSection = () => {
             src="/ramo-regalo-manualidades-flores-limpiapipas-1.webp"
             alt="Diseñando un ramo artesanal"
             className="absolute inset-0 w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-brand-blue-deep/10" />
         </div>
@@ -58,7 +57,6 @@ export const Footer = () => {
                 src="/logoamorenflores.png" 
                 alt="" 
                 className="w-10 h-10 rounded-full transition-all duration-700 shadow-sm"
-                referrerPolicy="no-referrer"
               />
               <div className="flex flex-col">
                 <span className="text-2xl font-serif tracking-tight">Amor en Flores</span>
@@ -83,7 +81,7 @@ export const Footer = () => {
               <h4 className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-blue-sky/20">Redes</h4>
               <ul className="space-y-3">
                 <li><a href="https://www.instagram.com/amorenfloresbarbara" target="_blank" rel="noopener noreferrer" className="text-sm text-brand-blue-sky/60 hover:text-white transition-colors">Instagram</a></li>
-                <li><a href="https://wa.me/5491155121698?text=Hola!%20Vengo%20desde%20la%20web%20de%20Amor%20en%20Flores%20B%C3%A1rbara%20y%20me%20gustar%C3%ADa%20realizar%20una%20consulta." target="_blank" rel="noopener noreferrer" className="text-sm text-brand-blue-sky/60 hover:text-white transition-colors">WhatsApp</a></li>
+                <li><a href="https://wa.me/5491155121698" target="_blank" rel="noopener noreferrer" className="text-sm text-brand-blue-sky/60 hover:text-white transition-colors">WhatsApp</a></li>
               </ul>
             </div>
           </div>

@@ -58,7 +58,7 @@ export default function App() {
 
         {/* WhatsApp Button */}
         <a
-          href="https://wa.me/5491155121698?text=Hola!%20Vengo%20desde%20la%20web%20de%20Amor%20en%20Flores%20B%C3%A1rbara%20y%20me%20gustar%C3%ADa%20realizar%20una%20consulta."
+          href="https://wa.me/5491155121698"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contactar por WhatsApp"

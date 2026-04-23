@@ -12,12 +12,14 @@ export const Hero = () => {
           transition={{ duration: 2, ease: "easeOut" }}
           className="absolute inset-0"
         >
-          <img 
-            src="/ramo1.webp" 
-            alt="Detalle de flores artesanales" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <picture className="absolute inset-0">
+            <source srcSet="/ramo1.webp" type="image/webp" />
+            <img 
+              src="/ramo1.jpeg" 
+              alt="Detalle de flores artesanales" 
+              className="w-full h-full object-cover"
+            />
+          </picture>
         </motion.div>
         
         {/* Blue Tint Overlay */}

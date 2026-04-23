@@ -38,7 +38,6 @@ export const Navbar = () => {
               src="/logoamorenflores.png" 
               alt="" 
               className="w-10 h-10 lg:w-14 lg:h-14 rounded-full transition-all duration-700 shadow-sm border border-brand-blue-sky/20"
-              referrerPolicy="no-referrer"
             />
             <div className="flex flex-col">
               <span className="text-xl lg:text-3xl font-serif tracking-tight text-brand-blue-deep leading-none">

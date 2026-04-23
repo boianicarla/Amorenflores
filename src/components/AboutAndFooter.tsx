@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
-import aboutImage from '../assets/about-image.webp';
-import logo from '../assets/logo.png';
 
 export const AboutSection = () => {
   return (
@@ -37,7 +35,7 @@ export const AboutSection = () => {
         {/* Image Pane */}
         <div className="flex-1 relative h-[400px] md:h-auto overflow-hidden">
           <img
-            src={aboutImage}
+            src="/about-image.webp"
             alt="Bárbara trabajando en un diseño de flores artesanales tejidas a mano"
             className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -58,7 +56,7 @@ export const Footer = () => {
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-4 group">
               <img 
-                src={logo} 
+                src="/logo.png" 
                 alt="Logotipo de Amor en Flores Bárbara" 
                 className="w-10 h-10 rounded-full transition-all duration-700 shadow-sm"
                 referrerPolicy="no-referrer"

@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
-import aboutImage from '../assets/about-image.webp';
-import logo from '../assets/logo.png';
+import aboutImage from '@/assets/about-image.webp';
+import logo from '@/assets/logo.png';
 
 export const AboutSection = () => {
   return (

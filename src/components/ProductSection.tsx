@@ -4,11 +4,26 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
-// Bulk import all product images from the assets folder
-const productImages = import.meta.glob('../assets/products/*.webp', { 
+// Bulk import all product images from the assets folder using the '@' alias
+const productImages = import.meta.glob('@/assets/products/*.webp', { 
   eager: true, 
   import: 'default' 
 }) as Record<string, string>;
+
+// Helper to resolve images safely across different environments
+const getProductImage = (fileName: string) => {
+  // Normalize the search key to be consistent with Vite's glob behavior
+  const key = `/src/assets/products/${fileName}`;
+  
+  // Try different common path patterns that Vite might use during dev/build
+  return (
+    productImages[key] || 
+    productImages[`/src/assets/products/${fileName}`] ||
+    productImages[`@/assets/products/${fileName}`] ||
+    Object.entries(productImages).find(([k]) => k.endsWith(fileName))?.[1] ||
+    fileName
+  );
+};
 
 interface Product {
   id: number;
@@ -152,8 +167,8 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
-  // Resolve image from the bundled assets
-  const resolvedImage = productImages[`../assets/products/${product.image}`] || product.image;
+  // Resolve image from the bundled assets using the robust helper
+  const resolvedImage = getProductImage(product.image);
 
   return (
     <div className="flex-[0_0_85%] sm:flex-[0_0_40%] lg:flex-[0_0_28%] min-w-0 pl-10 group cursor-pointer">

@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import aboutImage from '../assets/about-image.webp';
+import logo from '../assets/logo.png';
 
 export const AboutSection = () => {
-  const aboutUrl = new URL('../assets/about-image.webp', import.meta.url).href;
   return (
     <section id="nosotros" className="relative bg-brand-cream overflow-hidden">
       <div className="flex flex-col md:flex-row min-h-[600px]">
@@ -36,7 +37,7 @@ export const AboutSection = () => {
         {/* Image Pane */}
         <div className="flex-1 relative h-[400px] md:h-auto overflow-hidden">
           <img
-            src={aboutUrl}
+            src={aboutImage}
             alt="Bárbara trabajando en un diseño de flores artesanales tejidas a mano"
             className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -50,7 +51,6 @@ export const AboutSection = () => {
 };
 
 export const Footer = () => {
-  const logoUrl = new URL('../assets/logo.png', import.meta.url).href;
   return (
     <footer id="contacto" className="bg-brand-blue-deep text-white py-32 px-8 md:px-12">
       <div className="max-w-[1600px] mx-auto">
@@ -58,7 +58,7 @@ export const Footer = () => {
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-4 group">
               <img 
-                src={logoUrl} 
+                src={logo} 
                 alt="Logotipo de Amor en Flores Bárbara" 
                 className="w-10 h-10 rounded-full transition-all duration-700 shadow-sm"
                 referrerPolicy="no-referrer"

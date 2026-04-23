@@ -9,13 +9,10 @@ export default defineConfig({
     tailwindcss(),
   ],
   build: {
-    rollupOptions: {
-      output: {
-        assetFileNames: 'assets/[name].[ext]',
-        chunkFileNames: 'assets/[name].js',
-        entryFileNames: 'assets/[name].js',
-      },
-    },
+    // ESTA ES LA SOLUCIÓN DEFINITIVA: 
+    // Metemos todas las imágenes (hasta 2MB cada una) directamente dentro del código.
+    // Así no hay archivos que se pierdan en Vercel.
+    assetsInlineLimit: 2048000, 
   },
   server: {
     port: 3000,

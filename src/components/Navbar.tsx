@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
+import logo from '../assets/logo.png';
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ export const Navbar = () => {
         <div className="flex-1 lg:flex-none">
           <a href="#" className="flex items-center gap-4 group" aria-label="Ir al inicio">
             <img 
-              src="/logo.png" 
+              src={logo} 
               alt="Logo Amor en Flores Bárbara" 
               className="w-10 h-10 lg:w-14 lg:h-14 rounded-full transition-all duration-700 shadow-sm border border-brand-blue-sky/20"
               referrerPolicy="no-referrer"

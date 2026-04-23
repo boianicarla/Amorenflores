@@ -35,11 +35,10 @@ export const AboutSection = () => {
         {/* Image Pane */}
         <div className="flex-1 relative h-[400px] md:h-auto overflow-hidden">
           <img
-            src="/about-image.webp"
-            alt="Bárbara trabajando en un diseño de flores artesanales tejidas a mano"
+            src="/ramo-regalo-manualidades-flores-limpiapipas-1.webp"
+            alt="Diseñando un ramo artesanal"
             className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-brand-blue-deep/10" />
         </div>
@@ -56,8 +55,8 @@ export const Footer = () => {
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-4 group">
               <img 
-                src="/logo.png" 
-                alt="Logotipo de Amor en Flores Bárbara" 
+                src="/logoamorenflores.png" 
+                alt="" 
                 className="w-10 h-10 rounded-full transition-all duration-700 shadow-sm"
                 referrerPolicy="no-referrer"
               />

@@ -14,10 +14,9 @@ export const Hero = () => {
         >
           <img 
             src="/ramo1.webp" 
-            alt="Composición artística de ramos de flores artesanales tejidas a mano por Amor en Flores Bárbara" 
+            alt="Detalle de flores artesanales" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            loading="eager"
           />
         </motion.div>
         

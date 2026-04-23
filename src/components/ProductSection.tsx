@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { productImages } from '../imageMap';
 
 interface Product {
   id: number;
@@ -16,127 +15,127 @@ const products: Product[] = [
   {
     id: 1,
     name: "Ramo Argentina Mundial",
-    image: "flower-argentina.webp",
+    image: "/flores-argentina-mundial-flores-eternas-limpiapipas-artesanal.webp",
     category: "Nuestra Tierra"
   },
   {
     id: 2,
     name: "Canasta Mini Flores",
-    image: "flower-canasta.webp",
+    image: "/flores-canasta-mini-flores-eternas-limpiapipas-artesanal.webp",
     category: "Decoración"
   },
   {
     id: 3,
     name: "Ramo Clásico Eterno",
-    image: "flores-eternas-clasico.webp",
+    image: "/flores-eternas-limpia-pipas-manualidades-pipe-cleaner-flowers.webp",
     category: "Eternas"
   },
   {
     id: 4,
     name: "Lirio de Pasión",
-    image: "flower-lirio-pasion.webp",
+    image: "/flores-lirio-pasion-flores-eternas-limpiapipas-artesanal.webp",
     category: "Elegancia"
   },
   {
     id: 5,
     name: "Ramo Lavanda & Lilas",
-    image: "flower-lavanda-lilas.webp",
+    image: "/flores-ramo-lavanda-lilas-flores-eternas-limpiapipas-artesanal.webp",
     category: "Aromas"
   },
   {
     id: 6,
     name: "Mix Primavera Premium",
-    image: "flower-mix.webp",
+    image: "/flores-ramo-mix-flores-eternas-limpiapipas-artesanal.webp",
     category: "Especial"
   },
   {
     id: 7,
     name: "Lavanda Silvestre",
-    image: "flower-lavanda.webp",
+    image: "/lavanda-flores-eternas-limpiapipas-artesanal.webp",
     category: "Simplicidad"
   },
   {
     id: 8,
     name: "Lirios del Valle",
-    image: "flower-lirios-valle.webp",
+    image: "/liriosdelvalle-flores-eternas-limpiapipas-artesanal.webp",
     category: "Delicadeza"
   },
   {
     id: 9,
     name: "Mini Maceta Lirios",
-    image: "flower-maceta-lirios.webp",
+    image: "/maceta-mini-lirios-flores-eternas-limpiapipas-artesanal.webp",
     category: "Escritorio"
   },
   {
     id: 10,
     name: "Margarita Individual",
-    image: "flower-margarita-mini.webp",
+    image: "/margarita-mini-flores-eternas-limpiapipas-artesanal.webp",
     category: "Mini"
   },
   {
     id: 11,
     name: "Ramo de Margaritas",
-    image: "flower-margaritas-ramo.webp",
+    image: "/margaritas-ramo-flores-eternas-limpiapipas-artesanal.webp",
     category: "Alegría"
   },
   {
     id: 12,
     name: "Lengua de Suegra Mini",
-    image: "flower-lengua-suegra.webp",
+    image: "/planta-lengua-suegra-mini-flores-eternas-limpiapipas-artesanal.webp",
     category: "Plantas"
   },
   {
     id: 13,
     name: "Planta en Maceta",
-    image: "flower-planta-maceta.webp",
+    image: "/planta-maceta-flores-eternas-limpiapipas-artesanal.webp",
     category: "Vida Eterna"
   },
   {
     id: 14,
     name: "Duo Primavera",
-    image: "flower-duo-primavera.webp",
+    image: "/ramo-margaritas-tulipanes-manualidades-flores-limpiapipas.webp",
     category: "Clásicos"
   },
   {
     id: 15,
     name: "Ramo Royal Blue",
-    image: "flower-ramo-blue.webp",
+    image: "/ramo2-flores-eternas-limpiapipas-artesanal.webp",
     category: "Premium"
   },
   {
     id: 16,
     name: "Ramo Soft Pink",
-    image: "flower-ramo-pink.webp",
+    image: "/ramo5-flores-eternas-limpiapipas-artesanal.webp",
     category: "Romance"
   },
   {
     id: 17,
     name: "Ramo Vibrante",
-    image: "flower-ramo-vibrante.webp",
+    image: "/ramo6-manualidades-flores-limpiapipas.webp",
     category: "Color"
   },
   {
     id: 18,
     name: "Bouquet Artisanal",
-    image: "flower-bouquet-art.webp",
+    image: "/ramo7-manualidades-flores-limpiapipas.webp",
     category: "Arte"
   },
   {
     id: 19,
     name: "Maceta de Tulipanes",
-    image: "tulipanes-maceta-flores-eternas.webp",
+    image: "/tulipanes-maceta-flores-eternas-limpia-pipas-manualidades-pipe-cleaner-flowers.webp.webp",
     category: "Hogar"
   },
   {
     id: 20,
     name: "Tulipanes Clásicos",
-    image: "flower-tulipanes-clasicos.webp",
+    image: "/tulipanes-manualidades-flores-limpiapipas.webp",
     category: "Flores"
   },
   {
     id: 21,
     name: "Mini Tulipanes Duo",
-    image: "tulipanes-mini-duo.webp",
+    image: "/tulipanes-miniflores-eternas-limpia-pipas-manualidades-pipe-cleaner-flowers.webp.webp",
     category: "Colección"
   }
 ];
@@ -147,9 +146,6 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
-  // Use the pre-imported image from the map
-  const resolvedImage = productImages[product.image] || product.image;
-
   return (
     <div className="flex-[0_0_85%] sm:flex-[0_0_40%] lg:flex-[0_0_28%] min-w-0 pl-10 group cursor-pointer">
       <motion.div
@@ -160,11 +156,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
       >
         <div className="relative aspect-[3/4] overflow-hidden mb-6 bg-brand-blue-sky/5 rounded-2xl transition-all duration-700 shadow-sm group-hover:shadow-xl">
           <img
-            src={resolvedImage}
-            alt={`Flor artesanal: ${product.name} - Diseño hecho a mano por Amor en Flores Bárbara`}
+            src={product.image}
+            alt={product.name}
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
             referrerPolicy="no-referrer"
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-brand-blue-deep/0 group-hover:bg-brand-blue-deep/10 transition-colors duration-500" />
           

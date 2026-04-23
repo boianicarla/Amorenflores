@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import ramo1Webp from '../assets/ramo1.webp';
+import ramo1Jpeg from '../assets/ramo1.jpeg';
 
 export const Hero = () => {
   return (
@@ -13,9 +15,9 @@ export const Hero = () => {
           className="absolute inset-0"
         >
           <picture className="absolute inset-0">
-            <source srcSet="/ramo1.webp" type="image/webp" />
+            <source srcSet={ramo1Webp} type="image/webp" />
             <img 
-              src="/ramo1.jpeg" 
+              src={ramo1Jpeg} 
               alt="Detalle de flores artesanales" 
               className="w-full h-full object-cover"
             />

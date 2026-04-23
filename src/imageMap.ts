@@ -1,16 +1,25 @@
-// Usamos la función nativa de Vite para encontrar y procesar todas las imágenes automáticamente.
-// Esto garantiza que Vercel encuentre los archivos aunque les cambie el nombre (hashing).
-const staticImages = import.meta.glob('./assets/products/*.{webp,png,jpg,jpeg}', { 
-  eager: true, 
-  import: 'default' 
-}) as Record<string, string>;
-
-// Transformamos el objeto de Vite en nuestro mapa de productos
-export const productImages: Record<string, string> = {};
-
-// Las llaves de staticImages son './assets/products/nombre.webp'
-// Queremos que las llaves sean solo 'nombre.webp'
-Object.entries(staticImages).forEach(([path, url]) => {
-  const filename = path.split('/').pop() || '';
-  productImages[filename] = url;
-});
+// Al estar las fotos ahora en la carpeta 'public', las llamamos directamente por su nombre.
+// Esto evita que Vercel o Netlify les cambien el nombre y rompan los enlaces.
+export const productImages: Record<string, string> = {
+  "flower-argentina.webp": "/products/flower-argentina.webp",
+  "flower-canasta.webp": "/products/flower-canasta.webp",
+  "flores-eternas-clasico.webp": "/products/flores-eternas-clasico.webp",
+  "flower-lirio-pasion.webp": "/products/flower-lirio-pasion.webp",
+  "flower-lavanda-lilas.webp": "/products/flower-lavanda-lilas.webp",
+  "flower-mix.webp": "/products/flower-mix.webp",
+  "flower-lavanda.webp": "/products/flower-lavanda.webp",
+  "flower-lirios-valle.webp": "/products/flower-lirios-valle.webp",
+  "flower-maceta-lirios.webp": "/products/flower-maceta-lirios.webp",
+  "flower-margarita-mini.webp": "/products/flower-margarita-mini.webp",
+  "flower-margaritas-ramo.webp": "/products/flower-margaritas-ramo.webp",
+  "flower-lengua-suegra.webp": "/products/flower-lengua-suegra.webp",
+  "flower-planta-maceta.webp": "/products/flower-planta-maceta.webp",
+  "flower-duo-primavera.webp": "/products/flower-duo-primavera.webp",
+  "flower-ramo-blue.webp": "/products/flower-ramo-blue.webp",
+  "flower-ramo-pink.webp": "/products/flower-ramo-pink.webp",
+  "flower-ramo-vibrante.webp": "/products/flower-ramo-vibrante.webp",
+  "flower-bouquet-art.webp": "/products/flower-bouquet-art.webp",
+  "tulipanes-maceta-flores-eternas.webp": "/products/tulipanes-maceta-flores-eternas.webp",
+  "flower-tulipanes-clasicos.webp": "/products/flower-tulipanes-clasicos.webp",
+  "tulipanes-mini-duo.webp": "/products/tulipanes-mini-duo.webp",
+};

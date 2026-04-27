@@ -5,9 +5,9 @@ import ramo1Jpeg from '../assets/ramo1.jpeg';
 
 export const Hero = () => {
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden flex flex-col md:flex-row">
+    <section className="relative min-h-[600px] md:min-h-screen w-full overflow-hidden flex flex-col md:flex-row">
       {/* Media Pane */}
-      <div className="relative flex-1 bg-brand-pastel overflow-hidden h-1/2 md:h-full">
+      <div className="relative flex-1 bg-brand-pastel overflow-hidden min-h-[350px] md:min-h-screen">
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -29,7 +29,7 @@ export const Hero = () => {
       </div>
 
       {/* Content Pane */}
-      <div className="flex-1 bg-brand-cream relative z-10 flex flex-col justify-center px-10 md:px-20 py-24 pt-32 lg:pt-52 h-1/2 md:h-full">
+      <div className="flex-1 bg-brand-cream relative z-10 flex flex-col justify-center px-6 md:px-20 py-24 pt-32 lg:pt-64">
         <motion.div
           initial="hidden"
           animate="visible"

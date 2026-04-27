@@ -21,7 +21,13 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Offset for fixed header */
+    scroll-padding-top: 80px; /* Mobile offset */
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 160px; /* Desktop offset */
+    }
   }
   
   h1, h2, h3, h4, h5, h6 {

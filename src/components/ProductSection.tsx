@@ -1,6 +1,7 @@
 import React, { useCallback, useRef } from 'react';
 import { motion } from 'motion/react';
 import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
@@ -137,6 +138,12 @@ const products: Product[] = [
     name: "Mini Tulipanes Duo",
     image: "/tulipanes-miniflores-eternas-limpiapipas.webp",
     category: "Colección"
+  },
+  {
+    id: 22,
+    name: "Árbol de Santa Rita",
+    image: "/santa-rita-arbol-flores-limpiapipas.webp",
+    category: "Naturaleza"
   }
 ];
 
@@ -147,7 +154,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
   return (
-    <div className="flex-[0_0_85%] sm:flex-[0_0_40%] lg:flex-[0_0_28%] min-w-0 pl-10 group cursor-pointer">
+    <div className="flex-[0_0_85%] sm:flex-[0_0_40%] lg:flex-[0_0_28%] min-w-0 pl-4 md:pl-10 group cursor-pointer">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -195,50 +202,10 @@ export const ProductSection = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
     align: 'start',
-    loop: false,
+    loop: true,
     skipSnaps: false,
     dragFree: true
-  });
-
-  const scrollInterval = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  React.useEffect(() => {
-    return () => stopAutoScroll();
-  }, []);
-
-  const startAutoScroll = (direction: 'next' | 'prev') => {
-    if (scrollInterval.current) return;
-    
-    const scroll = () => {
-      if (emblaApi) {
-        if (direction === 'next') {
-          if (emblaApi.canScrollNext()) {
-            emblaApi.scrollNext();
-          } else {
-            stopAutoScroll();
-          }
-        } else {
-          if (emblaApi.canScrollPrev()) {
-            emblaApi.scrollPrev();
-          } else {
-            stopAutoScroll();
-          }
-        }
-      }
-    };
-
-    // Initial scroll
-    scroll();
-    // Continuous scroll
-    scrollInterval.current = setInterval(scroll, 800);
-  };
-
-  const stopAutoScroll = () => {
-    if (scrollInterval.current) {
-      clearInterval(scrollInterval.current);
-      scrollInterval.current = null;
-    }
-  };
+  }, [Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -249,14 +216,14 @@ export const ProductSection = () => {
   }, [emblaApi]);
 
   return (
-    <section id="galeria" className="relative py-32 overflow-hidden bg-white">
+    <section id="galeria" className="relative py-24 overflow-hidden bg-white">
       <div className="relative z-10 max-w-[1600px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 px-8 md:px-12 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 px-6 md:px-12 gap-8">
           <div className="max-w-2xl">
-            <span className="text-[11px] uppercase tracking-[0.4em] text-brand-blue-deep/40 mb-6 block font-semibold">
+            <span className="text-[10px] md:text-[11px] uppercase tracking-[0.4em] text-brand-blue-deep/40 mb-4 block font-semibold">
               Ediciones Limitadas
             </span>
-            <h2 className="text-5xl lg:text-7xl font-serif text-brand-blue-deep leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-brand-blue-deep leading-tight">
               Diseño <span className="italic text-brand-gold font-light">hecho a mano</span>
             </h2>
           </div>
@@ -264,40 +231,32 @@ export const ProductSection = () => {
           <div className="flex items-center gap-3">
             <button 
               onClick={scrollPrev}
-              onMouseEnter={() => startAutoScroll('prev')}
-              onMouseLeave={stopAutoScroll}
-              className="w-16 h-16 rounded-full border border-brand-blue-sky/20 flex items-center justify-center text-brand-blue-deep hover:bg-brand-blue-deep hover:text-white transition-all duration-500 group outline-none"
+              className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-brand-blue-sky/20 flex items-center justify-center text-brand-blue-deep focus:bg-brand-blue-deep focus:text-white transition-all duration-500 group outline-none"
               aria-label="Ver diseño anterior"
             >
-              <ChevronLeft size={20} className="group-hover:-translate-x-0.5 transition-transform" />
+              <ChevronLeft size={18} className="group-hover:-translate-x-0.5 transition-transform" />
             </button>
             <button 
               onClick={scrollNext}
-              onMouseEnter={() => startAutoScroll('next')}
-              onMouseLeave={stopAutoScroll}
-              className="w-16 h-16 rounded-full border border-brand-blue-sky/20 flex items-center justify-center text-brand-blue-deep hover:bg-brand-blue-deep hover:text-white transition-all duration-500 group outline-none"
+              className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-brand-blue-sky/20 flex items-center justify-center text-brand-blue-deep focus:bg-brand-blue-deep focus:text-white transition-all duration-500 group outline-none"
               aria-label="Ver siguiente diseño"
             >
-              <ChevronRight size={20} className="group-hover:translate-x-0.5 transition-transform" />
+              <ChevronRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
             </button>
           </div>
         </div>
 
-        <div className="relative group/carousel px-4 md:px-8">
+        <div className="relative group/carousel px-2 md:px-8">
           {/* Edge Hover Triggers */}
           <div 
-            onMouseEnter={() => startAutoScroll('prev')}
-            onMouseLeave={stopAutoScroll}
             className="absolute left-0 top-0 bottom-0 w-20 z-20 cursor-w-resize hidden lg:block"
           />
           <div 
-            onMouseEnter={() => startAutoScroll('next')}
-            onMouseLeave={stopAutoScroll}
             className="absolute right-0 top-0 bottom-0 w-20 z-20 cursor-e-resize hidden lg:block"
           />
 
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex -ml-8">
+            <div className="flex -ml-4 md:-ml-8">
               {shuffledProducts.map((product, index) => (
                 <ProductCard key={product.id} product={product} index={index} />
               ))}

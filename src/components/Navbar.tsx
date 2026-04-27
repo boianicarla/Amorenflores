@@ -2,52 +2,53 @@ import React, { useState } from 'react';
 import { Menu, X, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Inicio', href: '#' },
-    { name: 'Galería', href: '#galeria' },
-    { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Contacto', href: '#contacto' },
+    { name: 'Inicio', href: '/#' },
+    { name: 'Galería', href: '/#galeria' },
+    { name: 'Nosotros', href: '/#nosotros' },
+    { name: 'Contacto', href: '/#contacto' },
   ];
 
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 md:px-12',
-        'bg-white py-4 border-b border-brand-blue-sky/10 shadow-sm'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-12',
+        'bg-white py-2 border-b border-brand-blue-sky/10 shadow-sm'
       )}
     >
-      <div className="max-w-[1600px] mx-auto flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-2">
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden text-brand-blue-deep p-2"
+          className="lg:hidden text-brand-blue-deep p-2 flex-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Logo Left - Enhanced Presence */}
-        <div className="flex-1 lg:flex-none">
-          <a href="#" className="flex items-center gap-4 group" aria-label="Ir al inicio">
+        <div className="flex-1 lg:flex-none flex justify-center lg:justify-start">
+          <Link to="/" className="flex items-center gap-2 md:gap-6 group" aria-label="Ir al inicio">
             <img 
               src="/logoamorenflores.png" 
-              alt="" 
-              className="w-10 h-10 lg:w-14 lg:h-14 rounded-full transition-all duration-700 shadow-sm border border-brand-blue-sky/20"
+              alt="Logotipo de Amor en Flores Bárbara - Flores Eternas" 
+              className="w-14 h-14 md:w-20 md:h-20 lg:w-[140px] lg:h-[140px] rounded-full transition-all duration-700 shadow-sm border-2 border-brand-gold/10 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="text-xl lg:text-3xl font-serif tracking-tight text-brand-blue-deep leading-none">
+              <span className="text-lg md:text-2xl lg:text-4xl font-serif tracking-tight text-brand-blue-deep group-hover:text-brand-gold transition-colors leading-[1.1]">
                 Amor en Flores
               </span>
-              <span className="text-[10px] lg:text-[11px] font-sans uppercase tracking-[0.5em] mt-1.5 text-brand-blue-deep font-bold border-t border-brand-blue-sky/30 pt-1">
+              <span className="text-[7px] md:text-[10px] lg:text-[12px] font-sans uppercase tracking-[0.3em] md:tracking-[0.4em] mt-1 md:mt-2 text-brand-gold/60 font-bold border-t border-brand-gold/20 pt-1">
                 BÁRBARA
               </span>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation - Right Aligned for Clarity */}
@@ -65,7 +66,7 @@ export const Navbar = () => {
         </div>
 
         {/* Icons Right */}
-        <div className="flex items-center gap-4 md:gap-6 flex-none">
+        <div className="flex items-center gap-2 md:gap-6 flex-none">
           <a 
             href="https://www.instagram.com/amorenfloresbarbara" 
             target="_blank" 
@@ -73,7 +74,7 @@ export const Navbar = () => {
             className="text-brand-blue-deep hover:text-brand-gold transition-all p-2"
             aria-label="Síguenos en Instagram"
           >
-            <Instagram size={22} />
+            <Instagram size={20} />
           </a>
         </div>
       </div>
